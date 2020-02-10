@@ -6,10 +6,14 @@
 
 		<title>reveal.js</title>
 
+		<!-- Reveal css-->
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
 
+		<!-- Bulma CDN-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+		
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
 
@@ -54,7 +58,62 @@
                 var article = data[i];
 
 				str += `
-                <section>${article.header}</section>
+                <section class='hero'>
+				<div class='hero-body'>
+				<div class="container">
+					<h1 class='title'>${article.header}</h1>
+					<h2 class='subtitle'>${article.authors}</h2>	
+
+					<!-- First Row -->
+					<div class="columns">
+					<div class="column">
+						<strong>どんなもの？</strong>
+						<p>${article.what}</p>
+					</div>
+					<div class="column">
+						<strong>どうやって有効だと検証した？</strong>
+						<p>${article.evaluation}</p>
+					</div>
+					</div>
+
+					<!-- Second Row -->
+					<div class="columns">
+					<div class="column">
+						<strong>先行研究と比べてどこがすごい？</strong>
+						<p>${article.significance}</p>
+					</div>
+					<div class="column">
+						<strong>議論はある？</strong>
+						<p>${article.discussion}</p>
+					</div>
+					</div>
+
+					<!-- Third Row -->
+					<div class="columns">
+					<div class="column">
+						<strong>技術や手法のキモはどこ？</strong>
+						<p>${article.liver}</p>
+					</div>
+					<div class="column">
+						<strong>次に読むべき論文は？</strong>
+						<p>${article.next}</p>
+					</div>
+					</div>
+					<nav class="level">
+				`;
+
+				// Loop Images if they exsit
+				str+= `
+					<div class='level-item has-text-centered'>
+					<figure class=" image is-128x128"><img src="${article.image}"></figure>
+					</div>
+				`;
+
+				str+= `
+					</nav>
+				</div>
+				</div>
+				</section>
                 `;				
 			}
 
@@ -74,6 +133,5 @@
 		</div>
 
 		
-
 	</body>
 </html>
