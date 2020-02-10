@@ -30,7 +30,7 @@
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
 		<script type='text/javascript'>    
 
-		var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1MdaTjLmT4ZAb1WtbLEIHoXof8Tn37x8Q7rCSYEGjNB4/edit?usp=sharing';
+		var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1RpC6J7hbwLpry083b8ReEgVBtN-bi2L2jmqfK_ptDxw/edit#gid=2090435060';
 
 		function initReveal() {
 			Reveal.initialize({
@@ -67,11 +67,11 @@
 					<!-- First Row -->
 					<div class="columns">
 					<div class="column">
-						<strong>どんなもの？</strong>
+						<strong>What</strong>
 						<p>${article.what}</p>
 					</div>
 					<div class="column">
-						<strong>どうやって有効だと検証した？</strong>
+						<strong>Evaluation</strong>
 						<p>${article.evaluation}</p>
 					</div>
 					</div>
@@ -79,11 +79,11 @@
 					<!-- Second Row -->
 					<div class="columns">
 					<div class="column">
-						<strong>先行研究と比べてどこがすごい？</strong>
+						<strong>Significance</strong>
 						<p>${article.significance}</p>
 					</div>
 					<div class="column">
-						<strong>議論はある？</strong>
+						<strong>Discussion</strong>
 						<p>${article.discussion}</p>
 					</div>
 					</div>
@@ -91,12 +91,16 @@
 					<!-- Third Row -->
 					<div class="columns">
 					<div class="column">
-						<strong>技術や手法のキモはどこ？</strong>
+						<strong>Keypoints</strong>
 						<p>${article.liver}</p>
 					</div>
 					<div class="column">
-						<strong>次に読むべき論文は？</strong>
-						<p>${article.next}</p>
+						<strong>Next to read?</strong>
+						<section data-markdown>
+						<textarea data-template>
+						${article.next}
+						</textarea>
+						</section>
 					</div>
 					</div>
 					<nav class="level is-mobile">
